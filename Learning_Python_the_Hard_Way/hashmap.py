@@ -12,7 +12,9 @@ def hash_key(aMap, key):
     
 def get_bucket(aMap, key):
     """Given a key, find the bucket where it would go."""
+    # this will generate the bucket id in which we should store a given key
     bucket_id = hash_key(aMap, key)
+    # return the list that is stored at bucket_id
     return aMap[bucket_id]
     
 def get_slot(aMap, key, default=None):
@@ -20,17 +22,21 @@ def get_slot(aMap, key, default=None):
     Returns the index, key, and value of a slot in a bucket.
     Returns -1, key, and default (None if none set) when not found.
     """
+    # get a list representing the bucket in which the key is
     bucket = get_bucket(aMap, key)
     
+    # iterate over all entries in the bucket list (:-) until we find the key
     for i, kv in enumerate(bucket):
         k, v = kv
         if key == k:
             return i, k, v
 
+    # this means we actually don't have the key in the bucket list
     return -1, key, default
     
 def get(aMap, key, default=None):
     """Gets the value in a bucket for the given key, or the default."""
+    # return what is in default if nothing found, otherwise value
     i, k, v = get_slot(aMap, key, default=default)
     return v
     

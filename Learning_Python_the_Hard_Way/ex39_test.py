@@ -22,7 +22,9 @@ hashmap.set(cities, 'OR', 'Portland')
 # print out some cities
 print '-' * 10
 print "NY State has: %s" % hashmap.get(cities, 'NY')
+assert "New York" == hashmap.get(cities, 'NY')
 print "OR State has: %s" % hashmap.get(cities, 'OR')
+assert "Portland" == hashmap.get(cities, 'OR')
 
 # print some states
 print '-' * 10
