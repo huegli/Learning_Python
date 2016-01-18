@@ -1,0 +1,15 @@
+main loop:
+    if current scene = last scene
+        intro = false
+    else
+       intro = true
+
+    new_scene = scence.play(intro)
+
+    if new_scene = death then exit
+
+    if (vogon_coutn += 1 > threshold) then die
+
+    
+     
+
