@@ -8,5 +8,8 @@ class Room(object):
     def go(self, direction):
         return self.paths.get(direction, None)
 
+    def look(self):
+        return self.description
+
     def add_paths(self, paths):
         self.paths.update(paths)
