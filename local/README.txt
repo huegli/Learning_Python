@@ -1,1 +1,1 @@
-/home/nitrous/code/Learning_Python/README.txt
+../README.txt
