@@ -1,15 +1,24 @@
 import web
 
 urls = (
-  '/', 'index'
+  '/hello', 'Index'
 )
 
 app = web.application(urls, globals())
 
-class index:
+render = web.template.render('templates/', base="layout")
+
+class Index(object):
     def GET(self):
-        greeting = "Hello World"
-        return greeting
+        return render.hello_form()
+
+    def POST(self):
+        form = web.input(name="Nobody", greet="Hello")
+        if form.greet:
+            greeting = "%s, %s" % (form.greet, form.name)
+            return render.index(greeting = greeting)
+        else:
+            return "ERROR: greet is required."
 
 if __name__ == "__main__":
     app.run()
