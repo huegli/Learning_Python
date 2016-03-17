@@ -1,0 +1,7 @@
+*.pyc
+*.tmp
+bin/
+include/
+lib/
+local/
+man/
