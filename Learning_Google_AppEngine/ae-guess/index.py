@@ -1,30 +1,27 @@
+import os
 import sys
 
 print 'Content-Type: text/html'
 print ''
+print '<form method="post" action="/" enctype="multipart/form-data">'
+print 'Zap Data: <input type="text" name="zap"><br/>'
+print 'Zot Data: <input type="text" name="zot"><br/>'
+print 'File Data: <input type="file" name="filedat"><br/>'
+print '<input type="submit">'
 
 print '<pre>'
+print 'Environment keys:'
+print ''
+for param in os.environ.keys():
+    print param, ':', os.environ[param]
+print ''
 
-# Read the form input which is a single line
-# guess=25
-guess = -1
-data = sys.stdin.read()
-# print data
-try:
-    guess = int(data[data.find('=')+1:])
-except:
-    guess = -1
-print 'Your guess is', guess
-answer = 42;
-if guess < answer:
-    print 'Your guess is too low'
-if guess == answer:
-    print 'Congratulations!'
-if guess > answer:
-    print 'Your guess is too high'
+print 'Data'
+count = 0
+for line in sys.stdin:
+    count = count + 1
+    print line
+    if count > 100:
+        break
+
 print '</pre>'
-
-print '''<form method="post" action="/">
-<p>Enter Guess: <input type="text" name="guess"></p>
-<p><input type="submit"></p>
-</form>'''
