@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" title="Main" href="/css/basic.css" />
+    <link rel="stylesheet" type="text/css" title="Main" href="/css/tabs.css" />
+    <script type="text/javascript" src="/javascript/prototype.lite.js"></script>
+    <script type="text/javascript" src="/javascript/behaviour.js"></script>
+    <script type="text/javascript" src="/javascript/style.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="logo"></div>
+      <div id="header">
+        <ul id="primary">
+          <li>
+            <a href="/xslt?PAGE=A_0_0">Home</a>
+          </li>
+          <li>
+            <a href="/xslt?PAGE=B_0_0">Services</a>
+          </li>
+          <li>
+            <span>Settings</span>
+          </li>
+          <li>
+            <a href="/xslt?PAGE=D_0_0">Site Map</a>
+          </li>
+        </ul>
+      </div>
+      <div id="main">
+        <div id="outercontainer">
+          <div id="header2">
+            <ul id="secondary">
+              <li>
+                <a href="/xslt?PAGE=C_0_0">System Info</a>
+              </li>
+              <li>
+                <span>Broadband</span>
+              </li>
+              <li>
+                <a href="/xslt?PAGE=C_2_0">LAN</a>
+              </li>
+              <li>
+                <a href="/xslt?PAGE=C_3_0">Firewall</a>
+              </li>
+              <li>
+                <a href="/xslt?PAGE=C_4_0">Logs</a>
+              </li>
+              <li>
+                <a href="/xslt?PAGE=C_5_0">Diagnostics</a>
+              </li>
+            </ul>
+          </div>
+          <div id="innercontainer">
+            <div id="contents">
+              <div id="header3">
+                <ul id="tertiary">
+                  <li>
+                    <span>
+                      <a href="/xslt?PAGE=C_1_0">Status</a>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="/xslt?PAGE=C_1_1">Link Configuration</a>
+                  </li>
+                  <li>
+                    <a href="/xslt?PAGE=C_1_4">Multicast</a>
+                  </li>
+                </ul>
+              </div>
+              <h2>Summary Status</h2>
+              <table class="colortable">
+                <tr>
+                  <td class="tablesidebold">Internet</td>
+                  <td>
+                    <img class="bullet" alt="" width="5" height="5" src="/images/bullet_large_green.gif" />
+                  </td>
+                  <td>Connected</td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">DSL Link</td>
+                  <td>
+                    <img class="bullet" alt="" width="5" height="5" src="/images/bullet_large_green.gif" />
+                  </td>
+                  <td>Connected</td>
+                </tr>
+              </table>
+              <h2>Internet Details</h2>
+              <table class="colortable">
+                <tr>
+                  <td class="tablesidebold">Broadband Link Type</td>
+                  <td>Built in modem - VDSL</td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">Connection Type</td>
+                  <td>Direct IP (DHCP or Static)</td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">Current Internet Connection</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">IP Address</td>
+                  <td>75.37.204.241</td>
+                </tr>
+                <tr>
+                  <td class="indent">Subnet Mask</td>
+                  <td>255.255.252.0</td>
+                </tr>
+                <tr>
+                  <td class="indent">Default Gateway</td>
+                  <td>75.37.204.1</td>
+                </tr>
+                <tr>
+                  <td class="indent">Primary DNS</td>
+                  <td>68.94.156.8</td>
+                </tr>
+                <tr>
+                  <td class="indent">Secondary DNS</td>
+                  <td>68.94.157.8</td>
+                </tr>
+                <tr>
+                  <td class="indent">Host Name</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">Domain</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">MAC Address</td>
+                  <td>ac:5d:10:06:20:80</td>
+                </tr>
+                <tr>
+                  <td class="indent">MTU</td>
+                  <td>1500</td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">IPv6 Internet Connection:</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">Default Gateway:</td>
+                  <td>2602:300:c533:1510::1</td>
+                </tr>
+                <tr>
+                  <td class="indent">6rd BR:</td>
+                  <td>12.83.49.81</td>
+                </tr>
+                <tr>
+                  <td class="indent">6rd Prefix:</td>
+                  <td>2602:300::/28</td>
+                </tr>
+                <tr>
+                  <td class="indent">6rd Delegated Prefix:</td>
+                  <td>2602:304:b25c:cf10::/60</td>
+                </tr>
+                <tr>
+                  <td class="indent">6rd MTU</td>
+                  <td>1472</td>
+                </tr>
+              </table>
+              <h2>DSL Details</h2>
+              <table class="colortable">
+                <tr>
+                  <td class="tablesidebold">Modem Type</td>
+                  <td colspan="3">Built in modem - VDSL</td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">Connection Type</td>
+                  <td colspan="3"></td>
+                </tr>
+                <tr class="skipcolor">
+                  <td>
+                    <br />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tablesidebold">DSL Line </td>
+                  <td colspan="2">RJ-11</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th>Down</th>
+                  <th>Up</th>
+                </tr>
+                <tr>
+                  <td class="indent">User Rate</td>
+                  <td>25287 kbs</td>
+                  <td>2036 kbs</td>
+                </tr>
+                <tr>
+                  <td class="indent">Max User Rate</td>
+                  <td>46541 kbs</td>
+                  <td>Not Available</td>
+                </tr>
+                <tr>
+                  <td class="indent">Noise Margin</td>
+                  <td>15.9 dB</td>
+                  <td>Not Available</td>
+                </tr>
+                <tr>
+                  <td class="indent">Attenuation</td>
+                  <td>22.9 dB</td>
+                  <td>Not Available</td>
+                </tr>
+                <tr>
+                  <td class="indent">Output Power</td>
+                  <td>14.0 dBm
+                              </td>
+                  <td>7.7 dBm</td>
+                </tr>
+                <tr class="skipcolor">
+                  <td>
+                    <br />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="indent">Protocol</td>
+                  <td>G.993.2_8d</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">Channel</td>
+                  <td>Interleaved</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">DSLAM Vendor Information</td>
+                  <td colspan="2">Country {65461} Vendor {CXSY} Specific {21507
+                              }
+                            </td>
+                </tr>
+                <tr>
+                  <td class="indent">Rate Cap</td>
+                  <td>25312 kbs</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">Attenuation @ 300kHz</td>
+                  <td>13.5 dB</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="indent">Uncanceled Echo</td>
+                  <td>0.0 dB</td>
+                  <td>Ok</td>
+                </tr>
+                <tr>
+                  <td class="indent">VCXO Frequency Offset</td>
+                  <td>0.0 ppm</td>
+                  <td>Ok</td>
+                </tr>
+                <tr>
+                  <td class="indent">Final Receive Gain</td>
+                  <td>6.0 dB</td>
+                  <td>Ok</td>
+                </tr>
+                <tr>
+                  <td class="indent">Excessive Impulse Noise</td>
+                  <td>0</td>
+                  <td>Ok</td>
+                </tr>
+              </table>
+              <h2>Traffic Statistics</h2>
+              <table class="colortable">
+                <tr>
+                  <td class="tablesidebold">IP Traffic</td>
+                  <th>Bytes</th>
+                  <th>Packets</th>
+                  <th>Errors</th>
+                  <th>%</th>
+                </tr>
+                <tr>
+                  <td class="indent">Transmit</td>
+                  <td>55525396532</td>
+                  <td>210774815</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td class="indent">Receive</td>
+                  <td>447959105230</td>
+                  <td>342340514</td>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+                <tr class="skipcolor">
+                  <td>
+                    <br />
+                  </td>
+                </tr>
+              </table>
+              <h2>DSL Link Errors</h2>
+              <p>Collected for 48Days4:41:06</p>
+              <table class="colortable">
+                <tr>
+                  <td></td>
+                  <td>Since</td>
+                  <td>Current</td>
+                  <td>Current</td>
+                  <td>Time Since</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th>Reset</th>
+                  <th>24-hr int.</th>
+                  <th>15-min int.</th>
+                  <th>Last Event</th>
+                </tr>
+                <tr>
+                  <td class="tablesidebold" colspan="5">DSL</td>
+                </tr>
+                <tr>
+                  <td class="indent">Link Retrains</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:46</td>
+                </tr>
+                <tr>
+                  <td class="indent">DSL Training Errors</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0:00:00</td>
+                </tr>
+                <tr>
+                  <td class="indent">Training Timeouts</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0:00:00</td>
+                </tr>
+                <tr>
+                  <td class="indent">Loss of Framing Failures</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:47</td>
+                </tr>
+                <tr>
+                  <td class="indent">Loss of Signal Failures</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:47</td>
+                </tr>
+                <tr>
+                  <td class="indent">Loss of Power Failures</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0:00:00</td>
+                </tr>
+                <tr>
+                  <td class="indent">Loss of Margin Failures</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:47</td>
+                </tr>
+                <tr>
+                  <td class="indent">Cum. Seconds w/Errors</td>
+                  <td>10</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>17Days17:48:07</td>
+                </tr>
+                <tr>
+                  <td class="indent">Cum. Sec. w/Severe Errors</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:47</td>
+                </tr>
+                <tr>
+                  <td class="indent">Corrected Blocks</td>
+                  <td>822927</td>
+                  <td>1851</td>
+                  <td>731</td>
+                  <td>0:01:11</td>
+                </tr>
+                <tr>
+                  <td class="indent">Uncorrectable Blocks</td>
+                  <td>1255</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>17Days17:48:07</td>
+                </tr>
+                <tr>
+                  <td class="indent">DSL Unavailable Seconds</td>
+                  <td>64</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>35Days10:02:21</td>
+                </tr>
+              </table>
+              <td>
+                <br />
+              </td>
+              <form name="pagepost2" method="post" action="/xslt?PAGE=C_1_0_POST_RESET_STATS" id="pagepost2">
+                <input type="hidden" name="NONCE" value="b9e6d6ce07ac021" />
+                <input type="hidden" name="THISPAGE" value="C_1_0" />
+                <input type="submit" class="button" value="Reset Statistics" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
