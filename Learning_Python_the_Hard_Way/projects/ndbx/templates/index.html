@@ -1,4 +1,9 @@
-<p>Picture goes here.</p>
+$def with (have_pic)
+
+$if have_pic:
+    <img src="./static/picture.jpg">
+$else:
+    <p>Please upload a picture</p>
 
 <br/>
 <a href="/upload">Try new picture</a>
