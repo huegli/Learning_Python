@@ -1,0 +1,20 @@
+p.title {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 2em;
+    margin-left: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+div#titlebar {
+    color: #EA9843;
+    background: #535353;
+    border: 1px solid black;
+    padding: 1px 1px 0 0;
+}
+img.rightalign {
+    float: right;
+}
+
+div#main {
+    font-family: Arial, Helvetica, sans-serif;
+}

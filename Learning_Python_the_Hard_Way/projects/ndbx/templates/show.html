@@ -1,0 +1,12 @@
+$def with (pic, scale)
+
+$if scale:
+    <p>Picture $pic scaled to $scale :</p>
+    <img src="static/picture.jpg" width=$scale>
+$else:
+    <p>Picture $pic :</p>
+    <img src="static/picture.jpg">
+
+
+<br/>
+<a href="/upload">Try new picture</a>
