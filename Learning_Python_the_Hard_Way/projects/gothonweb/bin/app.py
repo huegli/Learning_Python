@@ -1,6 +1,9 @@
 import web
+from gothonweb import map
+
 
 urls = (
+  '/game', 'GameEngine',
   '/hello', 'Index'
 )
 
