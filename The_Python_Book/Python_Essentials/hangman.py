@@ -1,154 +1,166 @@
 #!/usr/bin/env python2
 
+from Tkinter import *
+from ttk import *
 from random import *
 
-player_score = 0
-computer_score = 0
+word = 0
+word_length = 0
+clue = 0
 
-def hangedman(hangman):
-    graphic = [
-    """
-        +-------+
-        |
-        |
-        |
-        |
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |
-        |
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |       |
-        |
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |      -|
-        |
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |      -|-
-        |
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |      -|-
-        |      /
-        |
-    ================
-    """,
-    """
-        +-------+
-        |       |
-        |       O
-        |      -|-
-        |      / \\
-        |
-    ================
-    """]
-
-    print graphic[hangman]
-    return
-
-def start():
-    print "Let's play a game of Linux Hangman"
-    while game():
-        pass
-    scores()
-
-def game():
+def gui():
+    global word, word_length, clue
     dictionary = ["gnu","kernel","linux","mageia","penguin","ubuntu"]
     word = choice(dictionary)
     word_length =len(word)
     clue = word_length * ["_"]
     tries = 6
-    letters_tried = ""
-    guesses = 0
-    letters_right = 0
-    letters_wrong = 0
-    global computer_score, player_score
+    
+    def hangedman(hangman):
+        graphic = [
+        """
+            +-------+
+            |
+            |
+            |
+            |
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |
+            |
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |       |
+            |
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |      -|
+            |
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |      -|-
+            |
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |      -|-
+            |      /
+            |
+        ================
+        """,
+        """
+            +-------+
+            |       |
+            |       O
+            |      -|-
+            |      / \\
+            |
+        ================
+        """]
+        graphic_set = graphic[hangman]
+        hm_graphic.set(graphic_set)
 
-    while (letters_wrong  != tries) and ("".join(clue) != word):
+    def game():
+        letters_wrong = incorrect_guesses.get()
         letter=guess_letter()
-        if len(letter)==1 and letter.isalpha():
-            if letters_tried.find(letter) != -1:
-                print "You've already picked", letter
-            else:
-                letters_tried = letters_tried + letter
-                first_index=word.find(letter)
-                if first_index == -1:
-                    letters_wrong += 1
-                    print "Sorry,",letter,"isn't what we're looking for."
-                else:
-                    print "Congratulations,",letter,"is correct."
-                    for i in range(word_length):
-                        if letter == word[i]:
-                            clue[i] = letter
+        first_index=word.find(letter)
+        if first_index == -1:
+            letters_wrong +=1
+            incorrect_guesses.set(letters_wrong)
         else:
-            print "Choose another."
-
+            for i in range(word_length):
+                if letter == word[i]:
+                    clue[i] = letter
         hangedman(letters_wrong)
-        print " ".join(clue)
-        print "Guesses: ", letters_tried
-
+        clue_set = " ".join(clue) 
+        word_output.set(clue_set)
         if letters_wrong == tries:
-            print "Game Over."
-            print "The word was",word
-            computer_score += 1
-            break
+            result_text = "Game Over, The word was " + word
+            result_set.set(result_text)
+            new_score = computer_score.get()
+            new_score += 1
+            computer_score.set(new_score)
         if "".join(clue) == word:
-            print "You Win!"
-            print "THe word was",word
-            player_score += 1
-            break
-    return play_again()
+            result_text = "You Win! The word was " + word
+            result_set.set(result_text)
+            new_score = player_score.get()
+            new_score += 1
+            player_score.set(new_score)
 
-def guess_letter():
-    print
-    letter = raw_input("Take a guess at our mystery word:")
-    letter.strip()
-    letter.lower()
-    print
-    return letter
+    def guess_letter():
+        letter = letter_guess.get()
+        letter.strip()
+        letter.lower()
+        return letter
 
-def play_again():
-    answer = raw_input("Would you like to play again? y/n: ")
-    if answer in {"y", "Y", "yes", "Yes", "Of course!"}:
-        return answer
-    else:
-        print "Thank you very much for playing our game. See you next time!"
+    def reset_game():
+        global word, word_length, clue
+        incorrect_guesses.set(0)
+        hangedman(0)
+        result_set.set("")
+        letter_guess.set("")
+        word = choice(dictionary)
+        word_length = len(word)
+        clue = word_length * ["_"]
+        new_clue = " ".join(clue)
+        word_output.set(new_clue)
 
-def scores():
-    global player_score, computer_score
-    print "HIGH SCORES"
-    print "Player: ", player_score
-    print "Computer: ", computer_score
+    hm_window = Toplevel()
+    hm_window.title ("Hangman")
+    incorrect_guesses = IntVar()
+    incorrect_guesses.set(0)
+    player_score = IntVar()
+    computer_score = IntVar()
+    result_set = StringVar()
+    letter_guess = StringVar()
+    word_output = StringVar()
+    hm_graphic = StringVar()
+
+    hm_frame = Frame(hm_window, padding = '3 3 12 12', width = 300)
+    hm_frame.grid(column=0, row = 0, sticky=(N, W, E, S))
+    hm_frame.columnconfigure(0, weight=1)
+    hm_frame.rowconfigure(0, weight=1)
+
+    Label(hm_frame, textvariable = hm_graphic).grid(column=2, row = 1)
+    Label(hm_frame, text = 'Word').grid(column=2, row = 2)
+    Label(hm_frame, textvariable = word_output).grid(column=2, row = 3)
+
+    Label(hm_frame, text = 'Enter a letter').grid(column=2, row = 4)
+    hm_entry = Entry(hm_frame, exportselection = 0, textvariable = letter_guess).grid(column = 2, row = 5)
+    hm_entry_button = Button(hm_frame, text = "Guess", command = game).grid(column = 2, row = 6)
+
+    Label(hm_frame, text = 'Wins').grid(column=1, row = 7, sticky = W)
+    Label(hm_frame, textvariable = player_score).grid(column=1, row = 8, sticky = W)
+    Label(hm_frame, text = 'Losses').grid(column=3, row = 7, sticky = W)
+    Label(hm_frame, textvariable = computer_score).grid(column=3, row = 8, sticky = W)
+    Label(hm_frame, textvariable = result_set).grid(column=2, row = 9)
+    replay_button = Button(hm_frame, text = "Reset", command = reset_game).grid(column = 2, row = 10)
 
 if __name__ == '__main__':
-    start()
+    gui()
 
 
