@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>First Example table</title>
+    </head>
+    <body>
+        <h3>A table</h3>
+        <table>
+            <tr>
+                <th>Entry</th>
+                <th>Value</th>
+            </tr>
+            {% for i in entries %}
+            {% set is_first = (i==0) %}
+            <tr>
+                {% if is_first %}<th>n</th>{% else %}<th>n+{{ i }}</th>{% endif %}
+                <th>{{ i }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+
