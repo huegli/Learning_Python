@@ -1,7 +1,9 @@
+"""Learning Python Application Development Chapter 1, Example 2"""
 from __future__ import print_function
-
 import random
 import textwrap
+
+from six.moves import input
 
 def print_bold(msg, end='\n'):
     """Print a string in 'bold' font"""
@@ -41,7 +43,7 @@ def occupy_huts():
 def process_user_choice():
     # Prompt user to select a hut
     msg = "\033[1m" + "Choose a hut number to enter (1-5):" + "\033[0m"
-    user_choice = raw_input("\n" + msg)
+    user_choice = input("\n" + msg)
     idx = int(user_choice)
     return idx
 
@@ -93,7 +95,7 @@ def play_game(health_meter):
         continue_attack = True
 
         while continue_attack:
-            continue_attack = raw_input("........continue attack? (y/n): ")
+            continue_attack = input("........continue attack? (y/n): ")
             if continue_attack == 'n':
                 print_bold("RUNNING AWAY with following health status...")
                 show_health(health_meter, bold=True)
@@ -120,8 +122,7 @@ def run_application():
     while keep_playing == 'y':
         reset_health_meter(health_meter)
         play_game(health_meter)
-        keep_playing = raw_input("Play again? Yes(y)/No(n):")
+        keep_playing = input("Play again? Yes(y)/No(n):")
 
 if __name__ == '__main__':
     run_application()
-

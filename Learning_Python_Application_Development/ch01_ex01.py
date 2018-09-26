@@ -1,7 +1,9 @@
+"""Learning Python Application Development Chapter 1, Example 1"""
 from __future__ import print_function
-
 import random
 import textwrap
+
+from six.moves import input
 
 if __name__ == '__main__':
     keep_playing = 'y'
@@ -36,14 +38,14 @@ if __name__ == '__main__':
 
         # Prompt user to select a hut
         msg = "\033[1m" + "Choose a hut number to enter (1-5):" + "\033[0m"
-        user_choice = raw_input("\n" + msg)
+        user_choice = input("\n" + msg)
         idx = int(user_choice)
 
         # Print the occupant info
         print("Revealing the occupants...")
         msg = ""
         for i in range(len(huts)):
-            occupant_info = "<%d:%s>"%(i+1, huts[i])
+            occupant_info = "<%d:%s>" % (i+1, huts[i])
             if i + 1 == idx:
                 occupant_info = "\033[1m" + occupant_info + "\033[0m"
             msg += occupant_info + " "
@@ -58,4 +60,4 @@ if __name__ == '__main__':
         else:
             print("\033[1m" + "Congratulations! YOU WIN!!!" + "\033[0m")
         print(dotted_line)
-        keep_playing = raw_input("Play again? Yes(y)/No(n):")
+        keep_playing = input("Play again? Yes(y)/No(n):")
