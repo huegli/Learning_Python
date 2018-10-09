@@ -1,13 +1,16 @@
+"""Learning Python Application Development Chapter 1, Example 2"""
 from __future__ import print_function
+from six.moves import input
 
 import random
-import textwrap
 
 from abc import ABCMeta, abstractmethod
+
 
 def print_bold(msg, end='\n'):
     """Print a string in 'bold' font"""
     print("\033[1m" + msg + "\033[0m", end=end)
+
 
 def weighted_random_selection(obj1, obj2):
     """Randomly select between two objects based on assigned 'weight'
@@ -22,9 +25,11 @@ def weighted_random_selection(obj1, obj2):
 
     return obj2
 
+
 class AbstractGameUnit:
     """An abstract base class for creating various game characters"""
     __metaclass__ = ABCMeta
+
     def __init__(self, name=''):
         self.max_hp = 0
         self.health_meter = 0
@@ -85,8 +90,9 @@ class Knight(AbstractGameUnit):
     instances are considered as 'friends' of the player and is
     indicated by the attribute `self.unit_type` .
     """
+
     def __init__(self, name='Sir Foo'):
-        AbstractGameUnit.__init__(self,name=name)
+        AbstractGameUnit.__init__(self, name=name)
         self.max_hp = 40
         self.health_meter = self.max_hp
         self.unit_type = 'friend'
@@ -111,7 +117,7 @@ class Knight(AbstractGameUnit):
             self.show_health(bold=True, end=' ')
             hut.occupant.show_health(bold=True, end=' ')
             while continue_attack:
-                continue_attack = raw_input(".......continue attack? (y/n): ")
+                continue_attack = input(".......continue attack? (y/n): ")
                 if continue_attack == 'n':
                     self.run_away()
                     break
@@ -141,8 +147,10 @@ class Knight(AbstractGameUnit):
         print_bold("RUNNING AWAY...")
         self.enemy = None
 
+
 class OrcRider(AbstractGameUnit):
     """Class that represents the game character Orc Rider"""
+
     def __init__(self, name=''):
         AbstractGameUnit.__init__(self, name=name)
         self.max_hp = 30
@@ -153,6 +161,7 @@ class OrcRider(AbstractGameUnit):
     def info(self):
         """Print basic information about this character"""
         print("Grrrr..I am an Orc Wolf Rider. Don't mess with me.")
+
 
 class Hut:
     """Class to create hut object(s) in the game Attack of the Orcs"""
@@ -177,6 +186,7 @@ class Hut:
             occupant_type = self.occupant.unit_type
 
         return occupant_type
+
 
 class AttackOfTheOrcs:
     def __init__(self):
@@ -206,11 +216,12 @@ class AttackOfTheOrcs:
         idx = 0
         print("Current occupants: %s" % self.get_occupants())
         while verifying_choice:
-            user_choice = raw_input("Choose a hut number to enter (1-5): ")
+            user_choice = input("Choose a hut number to enter (1-5): ")
             idx = int(user_choice)
             if self.huts[idx-1].is_acquired:
                 print("You have already acquired this hut. Try again."
-                      "<INFO: You can NOT get healed in already acquired hut.>")
+                      "<INFO: You can NOT get healed in already acquired"
+                      " hut.>")
             else:
                 verifying_choice = False
 
@@ -219,7 +230,7 @@ class AttackOfTheOrcs:
     def _occupy_huts(self):
         """Randomly occupy the huts with one of: friend, enemy or 'None'"""
         for i in range(5):
-            choice_lst = ['enemy', 'friend',None]
+            choice_lst = ['enemy', 'friend', None]
             computer_choice = random.choice(choice_lst)
             if computer_choice == 'enemy':
                 name = 'enemy-' + str(i+1)
@@ -250,6 +261,7 @@ class AttackOfTheOrcs:
 
         if acquired_hut_counter == 5:
             print_bold("Congratulations! YOU WIN!!!")
+
 
 if __name__ == '__main__':
     game = AttackOfTheOrcs()

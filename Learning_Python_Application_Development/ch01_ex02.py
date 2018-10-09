@@ -5,13 +5,16 @@ import textwrap
 
 from six.moves import input
 
+
 def print_bold(msg, end='\n'):
     """Print a string in 'bold' font"""
     print("\033[1m" + msg + "\033[0m", end=end)
 
+
 def print_dotted_line(width=72):
     """Print a dotted (rather 'dashed') line"""
     print('-'*width)
+
 
 def show_game_mission():
     print_dotted_line()
@@ -31,6 +34,7 @@ def show_game_mission():
     print("Be careful as there are enemies lurking around!")
     print_dotted_line()
 
+
 def occupy_huts():
     huts = []
     # Randomly append 'enemy' or 'friend' or None to the husts list
@@ -40,6 +44,7 @@ def occupy_huts():
         huts.append(computer_choice)
     return huts
 
+
 def process_user_choice():
     # Prompt user to select a hut
     msg = "\033[1m" + "Choose a hut number to enter (1-5):" + "\033[0m"
@@ -47,16 +52,18 @@ def process_user_choice():
     idx = int(user_choice)
     return idx
 
+
 def reveal_occupants(idx, huts):
     print("Revealing the occupants...")
     msg = ""
     for i in range(len(huts)):
-        occupant_info = "<%d:%s>"%(i+1, huts[i])
+        occupant_info = "<%d:%s>" % (i+1, huts[i])
         if i + 1 == idx:
             occupant_info = "\033[1m" + occupant_info + "\033[0m"
         msg += occupant_info + " "
     print("\t" + msg)
     print_dotted_line()
+
 
 def show_health(health_meter, bold=False):
     """Show the remaining hit points of the player and the enemy"""
@@ -68,10 +75,12 @@ def show_health(health_meter, bold=False):
     else:
         print(msg)
 
+
 def reset_health_meter(health_meter):
     """Reset the value of health_meter dict to the original ones"""
     health_meter['player'] = 40
     health_meter['enemy'] = 30
+
 
 def attack(health_meter):
     hit_list = 4 * ['player'] + 6 * ['enemy']
@@ -81,6 +90,7 @@ def attack(health_meter):
     health_meter[injured_unit] = max(hit_points - injury, 0)
     print("ATTACK! ", end='')
     show_health(health_meter)
+
 
 def play_game(health_meter):
     huts = occupy_huts()
@@ -112,6 +122,7 @@ def play_game(health_meter):
                 print_bold("YOU LOSE :( Better luck next time")
                 break
 
+
 def run_application():
     """Top level control function for running the application."""
     keep_playing = 'y'
@@ -123,6 +134,7 @@ def run_application():
         reset_health_meter(health_meter)
         play_game(health_meter)
         keep_playing = input("Play again? Yes(y)/No(n):")
+
 
 if __name__ == '__main__':
     run_application()
